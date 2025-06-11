@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/7f5049b87a.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>WordS Slider</title>
+  </head>
+  <body>
+    <main>
+      <marquee
+        id="top-silder-text"
+        behavior=""
+        direction=""
+        scrollamount="12"
+        style="font-size: 14px"
+        >Enter the text below it Will appear in customised smooth sliding
+        format, Watch your words slide beautifully across the screen just like
+        this text is moving across the page
+      </marquee>
+      <marquee
+        id="bottom-silder-text"
+        behavior=""
+        direction="right"
+        style="font-size: 14px"
+        scrollamount="12"
+        >Enter the text below it Will appear in customised smooth sliding
+        format, Watch your words slide beautifully across the screen just like
+        this text is moving across the page</marquee
+      >
+
+      <div class="container">
+        <form id="myForm" onsubmit="return validateForm()">
+          <label class="slider-label" for="slider-input">
+            Enter the text you wish to display
+          </label>
+          <input
+            id="slider-input"
+            type="text"
+            placeholder="type your text..."
+          />
+          <button type="submit" value="Submit">Submit</button>
+        </form>
+      </div>
+
+      <div id="slide-display" class="slide-display">
+        <div style="position: relative; width: 100%; height: 100%">
+          <div class="controls">
+            <div style="display: flex; gap: 16px">
+              <button id="back-btn" onclick="goback()">
+                <i class="fa-solid fa-arrow-left"></i>
+              </button>
+              <div class="color-controls">
+                Background
+                <label
+                  for="bgColor"
+                  class="color-label"
+                  id="customColorLabel"
+                ></label>
+                <input
+                  type="color"
+                  id="bgColor"
+                  class="color-input"
+                  onchange="changebg()"
+                />
+              </div>
+              <div class="color-controls">
+                Text
+                <label
+                  for="textColor"
+                  class="color-label"
+                  id="customColorLabel"
+                ></label>
+                <input
+                  id="textColor"
+                  type="color"
+                  class="color-input"
+                  onchange="changeText()"
+                />
+              </div>
+              <div style="display: flex; gap: 8px">
+                <div class="color-controls">Size</div>
+                <input
+                  onchange="changeSize()"
+                  id="textSize"
+                  min="10"
+                  value="300"
+                  max="500"
+                  class="text-size-input"
+                  type="range"
+                />
+              </div>
+              <div style="display: flex; gap: 8px">
+                <div class="color-controls">Speed</div>
+                <input
+                  class="text-size-input"
+                  type="range"
+                  id="textSpeed"
+                  min="1"
+                  max="100"
+                  value="10"
+                  onchange="changeSpeed()"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div id="slider-text"></div>
+        </div>
+      </div>
+    </main>
+
+    <script src="index.js"></script>
+  </body>
+</html>

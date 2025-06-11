@@ -1,0 +1,175 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+main {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow-y: auto;
+  /* background: #000; */
+  background-image: url(symbol-scatter-haikei.png);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+#top-silder-text {
+  position: absolute;
+  top: 0px;
+  color: #ffffff;
+  padding: 8px 20px;
+  background: linear-gradient(45deg, #0027ff4d, #9e28fab3);
+}
+#bottom-silder-text {
+  position: absolute;
+  bottom: 0px;
+  background: linear-gradient(45deg, #9e28fab3, #0027ff4d);
+  color: #ffffff;
+  padding: 8px 20px;
+}
+.container {
+  text-align: center;
+}
+.slider-label {
+  color: #ffffff;
+  font-size: 28px;
+  display: block;
+}
+.container input {
+  width: 100%;
+  margin-top: 10px;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 8px;
+  backdrop-filter: blur(2px) saturate(180%);
+  -webkit-backdrop-filter: blur(2px) saturate(180%);
+  background-color: rgba(38, 38, 39, 0.48);
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  color: #ffffff;
+  height: 50px;
+}
+.container button {
+  margin-top: 16px;
+  padding: 10px 40px;
+  color: #fff;
+  font-size: 18px;
+  width: auto;
+  border-radius: 8px;
+  border: 1px solid;
+  border-color: #0026ff;
+  background: linear-gradient(45deg, #0026ff, #9f28fa);
+}
+.slide-display {
+  position: absolute;
+  height: 100%;
+  background: #000000;
+  width: 0px;
+  left: 0;
+  overflow: hidden;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease-in-out;
+}
+#slider-text {
+  font-weight: 600;
+  color: #ffffff;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.controls {
+  position: absolute;
+  top: 20px;
+  z-index: 999;
+  transform: translateX(-50%);
+  left: 50%;
+  backdrop-filter: blur(14px) saturate(180%);
+  -webkit-backdrop-filter: blur(14px) saturate(180%);
+  background-color: rgba(19, 19, 20, 0.72);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 10px 10px;
+}
+
+#back-btn {
+  backdrop-filter: blur(2px) saturate(180%);
+  -webkit-backdrop-filter: blur(2px) saturate(180%);
+  background-color: rgba(38, 38, 39, 0.48);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  border-radius: 8px;
+  padding: 4px 12px;
+  color: #ffffff;
+}
+#back-btn i {
+  margin-top: 2px;
+  color: #fff;
+  /* font-weight: 300; */
+  font-size: 18px;
+}
+.color-controls {
+  color: #ffffff;
+  font-size: 16px;
+  display: flex;
+  font-weight: 300;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 8px;
+  float: 1;
+}
+.text-size-input {
+  width: 180px;
+  accent-color: #9f28fa;
+}
+
+/* color input  */
+.color-input {
+  visibility: hidden;
+  width: 0;
+  margin-left: -10px;
+}
+
+/* Style the custom button */
+.color-label {
+  /* display: ; */
+  width: 20px;
+  height: 20px;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  cursor: pointer;
+  background: linear-gradient(135deg, #6b75ff, #cc27e9, #1e90ff, #2ecc71);
+  background-size: 200% 200%;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.color-label.selected {
+  border-color: #333;
+  box-shadow: 0 2px 12px rgba(30, 144, 255, 0.2);
+}
+
+@media only screen and (max-width: 600px) {
+  .controls {
+    transform: translate(0, -50%) rotate(90deg);
+    top: 50%;
+    left: -8px;
+  }
+  .color-controls {
+    font-size: 14px;
+  }
+  .text-size-input {
+    width: 100px;
+  }
+}
